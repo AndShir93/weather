@@ -1,4 +1,5 @@
 export const defaultState = {
-    count: 1,
-    date : new Date().toLocaleTimeString()
+    city: 'Izhevsk',
+    temp: '',
+    cityList: ['Izhevsk','Mozhga','Sarapul','London']
 }
