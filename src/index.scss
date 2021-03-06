@@ -1,0 +1,94 @@
+body, input {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('/img/clouds.jpg') no-repeat;
+  background-size: cover;
+}
+p{margin: 0;padding: 0;}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App{
+  display: grid;
+  grid-template-areas: 'weather navbar';
+  grid-template-columns: auto 400px;
+  height: 100vh;
+}
+.weather{
+  grid-area: weather;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 0 2rem;
+  &__data{
+    display: flex;
+    align-items: center;
+  }
+  &__temp{
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 100;
+  }
+  &__city{
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 100;
+  }
+}
+.weather__title{
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 100;
+}
+.city-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  &__item{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 100;
+    margin: 0 0 .5rem 0;
+  }
+}
+.search-city{
+  display: flex;
+  justify-content: space-between;
+  &__input{
+    max-width: calc(100% - 50px);
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255, .5);
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 100;
+    &:focus{
+      outline: none;
+    }
+  }
+  &__button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255, .5);
+    background: url('/img/loupe.svg') no-repeat center;
+    background-size: 60%;
+    outline: none;
+  }
+}
+.search-weather{
+  grid-area: navbar;
+  backdrop-filter: blur(15px);
+  &__list{
+    margin: 1rem 0 0 0;
+  }
+  cursor: pointer;
+  padding: 2rem 1rem 0 2rem;
+}

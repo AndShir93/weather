@@ -11,13 +11,15 @@ function ListCity(){
         dispatch(getWeather(city))
     }
     return(
-        <ul className="city-list">
-            {cityList.map( city => 
-                <li key={id++} onClick={(e) => {
-                    getCity(e)
-                }}>{city}</li>
-            )}
-        </ul>
+        <>
+            <ul className="city-list search-weather__list">
+                {cityList.map( city => 
+                    <li key={id++} className='city-list__item' onClick={(e) => {
+                        getCity(e)
+                    }}>{city}</li>
+                )}
+            </ul>
+        </>
     )
 }
 export default ListCity
