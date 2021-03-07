@@ -20,6 +20,7 @@ export const getCity = (city) => {
             console.log(data)
             dispatch({type: 'GET_COORDS', payload: data.result[0].position})
             dispatch({type:'GET_CITY', payload: data.result[0].title})
+            dispatch({type: 'GET_DESCRIPRION', payload: data.result[0].description})
         })
         .catch(()=> console.log('Не удалось получить координаты!'))
     }
