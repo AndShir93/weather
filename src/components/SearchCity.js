@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getWeather } from '../asyncActions/getWeather'
+import { getCity } from '../asyncActions/getWeather'
 
 function SearchCity(){
     const [value, setValue] = useState()
@@ -12,7 +12,7 @@ function SearchCity(){
             }}/>
             <button className='search-city__button' onClick={(e)=>{
                 e.preventDefault()
-                dispatch(getWeather(value))
+                dispatch(getCity(value))
             }}></button>
         </form>
     )

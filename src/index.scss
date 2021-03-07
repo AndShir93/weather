@@ -23,14 +23,13 @@ code {
   grid-area: weather;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 0 0 0 2rem;
   &__data{
     display: flex;
-    align-items: center;
+    flex-direction: column;
   }
-  &__temp{
-    font-size: 3rem;
+  &__temp, &__wind{
+    font-size: 2rem;
     color: #fff;
     font-weight: 100;
   }
@@ -81,6 +80,7 @@ code {
     background: url('/img/loupe.svg') no-repeat center;
     background-size: 60%;
     outline: none;
+    cursor: pointer;
   }
 }
 .search-weather{

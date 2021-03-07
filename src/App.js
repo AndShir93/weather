@@ -9,7 +9,7 @@ function App() {
         <Weather/>
         <div className='search-weather'>
           <SearchCity/>
-          <ListCity/>
+          {/* <ListCity/> */}
         </div>
     </div>
   );

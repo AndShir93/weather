@@ -1,5 +1,6 @@
 export const defaultState = {
-    city: 'Izhevsk',
+    city: 'Ижевск',
     temp: '',
-    cityList: ['Izhevsk','Mozhga','Sarapul','London']
+    cityList: ['Izhevsk','Mozhga','Sarapul','London'],
+    coords: {lat: 56.866558, lon: 53.209415}
 }
