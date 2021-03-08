@@ -1,12 +1,18 @@
-body, input {
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('/img/clouds.jpg') no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
+  transition: .5s;
+}
+input{margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 p{margin: 0;padding: 0;}
 code {
@@ -30,22 +36,22 @@ code {
   }
   &__temp, &__wind{
     font-size: 2rem;
-    color: #fff;
+    color: rgb(1, 49, 139);
     font-weight: 100;
   }
   &__city{
     font-size: 3rem;
-    color: #fff;
+    color: rgb(1, 49, 139);
     font-weight: 100;
   }
   &__description{
     font-size: 1rem;
-    color: #fff;
+    color: rgb(1, 49, 139);
     font-weight: 100;
   }
 }
 .weather__title{
-  color: #fff;
+  color: rgb(1, 49, 139);
   font-size: 3rem;
   font-weight: 100;
 }
@@ -55,7 +61,7 @@ code {
   margin: 0;
   &__item{
     font-size: 1.5rem;
-    color: #fff;
+    color: rgb(1, 49, 139);
     font-weight: 100;
     margin: 0 0 .5rem 0;
   }
@@ -72,7 +78,7 @@ code {
     border: none;
     border-bottom: 1px solid rgba(255,255,255, .5);
     font-size: 1.5rem;
-    color: #fff;
+    color: rgb(1, 49, 139);
     font-weight: 100;
     &:focus{
       outline: none;
@@ -96,4 +102,49 @@ code {
   }
   cursor: pointer;
   padding: 2rem 1rem 0 2rem;
+}
+.arrow-wrap{
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+.arrow_right{
+  width: 40px;
+  cursor: pointer;
+  margin: 0 0 0 20px;
+}
+.arrow_left{
+  width: 40px;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+@media (max-width: 1024px){
+  .App{
+    grid-template-columns: auto 300px;
+  }
+  .weather{
+    &__temp, &__wind{
+      font-size: 1.5rem;
+    }
+    &__city{
+      font-size: 2.5rem;
+    }
+    &__description{
+      font-size: .8rem;
+    }
+  }
+}
+@media (max-width: 692px){
+  .App{
+    grid-template-columns: auto;
+    grid-template-areas: 'weather'
+                          'navbar';
+  }
+  .search-weather{
+    max-width: 300px;
+    width: 100%;
+    backdrop-filter: none;
+  }
 }

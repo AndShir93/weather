@@ -5,8 +5,8 @@ export const getWeather = (coords) => {
 
     return dispatch => (
         fetch(URLcoord).then(resp => resp.json()).then(data => {
-            console.log(data)
             dispatch({type:'GET_TEMP', payload: data.main.temp})
+            dispatch({type: 'GET_WIND', payload: data.wind})
         }).catch(()=>{console.log('City not found!')})
     )
 }
@@ -17,7 +17,6 @@ export const getCity = (city) => {
         fetch(getCoords)
         .then(resp => resp.json())
         .then( data => {
-            console.log(data)
             dispatch({type: 'GET_COORDS', payload: data.result[0].position})
             dispatch({type:'GET_CITY', payload: data.result[0].title})
             dispatch({type: 'GET_DESCRIPRION', payload: data.result[0].description})

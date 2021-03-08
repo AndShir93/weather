@@ -1,5 +1,4 @@
 import React from 'react'
-import ListCity from './components/ListCity';
 import SearchCity from './components/SearchCity';
 import Weather from './components/Weather';
 
