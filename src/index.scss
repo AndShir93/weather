@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: .5s;
+  background-image: url('img/air-balloon.jpg');
 }
 input{margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -78,7 +78,7 @@ code {
     border: none;
     border-bottom: 1px solid rgba(255,255,255, .5);
     font-size: 1.5rem;
-    color: rgb(1, 49, 139);
+    color: #fff;
     font-weight: 100;
     &:focus{
       outline: none;
@@ -139,12 +139,14 @@ code {
 @media (max-width: 692px){
   .App{
     grid-template-columns: auto;
+    grid-template-rows: min-content;
     grid-template-areas: 'weather'
                           'navbar';
   }
   .search-weather{
-    max-width: 300px;
+    max-width: 320px;
     width: 100%;
     backdrop-filter: none;
+    box-sizing: border-box;
   }
 }
