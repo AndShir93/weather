@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCity, getWeather } from '../asyncActions/getWeather'
-import ArrowWrap from './ArrowWrap'
 
 export default function Weather(){
     const dispatch = useDispatch()
