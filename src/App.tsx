@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchCity from './components/SearchCity';
 import Weather from './components/Weather';
+import ListCity from "./components/ListCity";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Weather/>
       <div className='search-weather'>
         <SearchCity/>
-        {/* <ListCity/> */}
+         <ListCity/>
       </div>
     </div>
   );

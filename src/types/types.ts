@@ -5,6 +5,7 @@ export interface IState {
   coords: ICoords;
   wind: IWind;
   description: string;
+  levels: ILevels[];
 }
 
 export interface ICoords {
@@ -16,4 +17,11 @@ export interface IWind {
   deg: string;
   gust: string;
   speed: string;
+}
+
+export interface ILevels {
+  id: number;
+  value: string;
+  name_source: string;
+  geo_center: ICoords;
 }
