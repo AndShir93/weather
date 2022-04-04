@@ -1,24 +1,19 @@
-import {defaultState} from "./defaultState";
+import { defaultState } from './defaultState';
+import { ICoords, ILevels, IState, IWeather } from '../types/types';
 
 interface IAction {
-  type: 'GET_TEMP' | 'GET_CITY' | 'GET_COORDS' | 'GET_DESCRIPTION' | 'GET_WIND' | 'GET_LEVELS';
-  payload: any;
+  type: 'GET_COORDS' | 'GET_LEVELS' | 'GET_WEATHER';
+  payload: IWeather | ICoords | ILevels[];
 }
 
-export const reducer = (state = defaultState, action: IAction) => {
+export const reducer = (state = defaultState, action: IAction): IState => {
   switch (action.type) {
-    case "GET_TEMP" :
-      return {...state, temp: action.payload}
-    case "GET_CITY" :
-      return {...state, city: action.payload}
-    case "GET_COORDS" :
-      return {...state, coords: action.payload}
-    case "GET_DESCRIPTION" :
-      return {...state, description: action.payload}
-    case "GET_WIND" :
-      return {...state, wind: action.payload}
-    case "GET_LEVELS" :
-      return {...state, levels: action.payload}
+    case 'GET_WEATHER':
+      return { ...state, weather: action.payload as IWeather }
+    case 'GET_COORDS' :
+      return { ...state, coords: action.payload as ICoords }
+    case 'GET_LEVELS' :
+      return { ...state, levels: action.payload as ILevels[] }
     default:
       return state
   }

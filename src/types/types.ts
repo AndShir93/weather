@@ -1,11 +1,14 @@
 export interface IState {
+  coords: ICoords;
+  levels: ILevels[];
+  weather: IWeather;
+}
+
+export interface IWeather {
   city: string;
   temp: string;
-  cityList: string[];
-  coords: ICoords;
   wind: IWind;
   description: string;
-  levels: ILevels[];
 }
 
 export interface ICoords {
@@ -14,9 +17,9 @@ export interface ICoords {
 }
 
 export interface IWind {
-  deg: string;
-  gust: string;
-  speed: string;
+  deg?: string;
+  gust?: string;
+  speed?: string;
 }
 
 export interface ILevels {
@@ -25,3 +28,7 @@ export interface ILevels {
   name_source: string;
   geo_center: ICoords;
 }
+
+export type TRenderView = () => JSX.Element;
+
+export type TRenderViewProps<T> = (props: T) => JSX.Element;

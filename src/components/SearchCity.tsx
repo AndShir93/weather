@@ -1,14 +1,15 @@
-import React, {FormEvent, useState} from 'react';
-import {getCityLevels} from '../asyncActions/getWeather';
-import {useDispatch} from "react-redux";
+import React, { FormEvent, useState } from 'react';
+import { getCityLevels } from '../asyncActions/getWeather';
+import { useDispatch } from 'react-redux';
+import { TRenderViewProps } from '../types/types';
 
 interface IProps {
   setIsSearch: (param: boolean) => void;
 }
 
-const SearchCity = (props: IProps) => {
-  const {setIsSearch} = props;
-  const [value, setValue] = useState<string>('');
+const SearchCity: TRenderViewProps<IProps> = (props) => {
+  const { setIsSearch } = props;
+  const [ value, setValue ] = useState<string>('');
   const dispatch = useDispatch();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

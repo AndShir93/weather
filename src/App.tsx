@@ -1,16 +1,17 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchCity from './components/SearchCity';
 import Weather from './components/Weather';
-import ListCity from "./components/ListCity";
+import ListCity from './components/ListCity';
 import thunder from './img/thunder.svg';
-import {useAppSelector} from "./redux/store";
+import { useAppSelector } from './redux/store';
+import { TRenderView } from './types/types';
 
-function App() {
-  const [isSearch, setIsSearch] = useState(false);
+const App: TRenderView = () => {
+  const [ isSearch, setIsSearch ] = useState(false);
   const levels = useAppSelector(state => state.levels);
   useEffect(() => {
     setIsSearch(false);
-  }, [levels.length]);
+  }, [ levels.length ]);
 
   return (
     <div className="App">
