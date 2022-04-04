@@ -2,11 +2,17 @@ import React, {FormEvent, useState} from 'react';
 import {getCityLevels} from '../asyncActions/getWeather';
 import {useDispatch} from "react-redux";
 
-function SearchCity() {
+interface IProps {
+  setIsSearch: (param: boolean) => void;
+}
+
+const SearchCity = (props: IProps) => {
+  const {setIsSearch} = props;
   const [value, setValue] = useState<string>('');
   const dispatch = useDispatch();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSearch(true);
     dispatch(getCityLevels(value));
   };
 
