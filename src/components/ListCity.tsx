@@ -1,12 +1,12 @@
 import React from 'react';
-import {ICoords, IState} from "../types/types";
-import {useAppSelector} from "../redux/store";
-import {useDispatch} from "react-redux";
-import {getWeather} from "../asyncActions/getWeather";
+import { ICoords, IState, TRenderView } from '../types/types';
+import { useAppSelector } from '../redux/store';
+import { useDispatch } from 'react-redux';
+import { getWeather } from '../asyncActions/getWeather';
 
 type TSelectCity = (coords: ICoords) => () => void;
 
-function ListCity() {
+const ListCity: TRenderView = () => {
   const levels = useAppSelector((state: IState) => state.levels);
   const dispatch = useDispatch();
   const selectCity: TSelectCity = (coords) => () => {
@@ -16,7 +16,7 @@ function ListCity() {
   return (
     <>
       <ul className="city-list search-weather__list">
-        {levels.map(({id, value, geo_center}) =>
+        {levels.map(({ id, value, geo_center }) =>
           <li
             key={id}
             value={id}

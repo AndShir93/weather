@@ -1,18 +1,19 @@
-import React, {useEffect} from 'react';
-import {getWeather} from '../asyncActions/getWeather'
-import {useAppSelector} from "../redux/store";
-import {useDispatch} from "react-redux";
+import React, { useEffect } from 'react';
+import { getWeather } from '../asyncActions/getWeather'
+import { useAppSelector } from '../redux/store';
+import { useDispatch } from 'react-redux';
+import { TRenderView } from '../types/types';
 
-export default function Weather() {
+const Weather: TRenderView = () => {
   const dispatch = useDispatch();
-  const temp = useAppSelector(state => state.temp);
-  const city = useAppSelector(state => state.city);
+  const temp = useAppSelector(state => state.weather.temp);
+  const city = useAppSelector(state => state.weather.city);
   const coords = useAppSelector(state => state.coords);
-  const description = useAppSelector(state => state.description);
-  const wind = useAppSelector(state => state.wind);
+  const description = useAppSelector(state => state.weather.description);
+  const wind = useAppSelector(state => state.weather.wind);
   useEffect(() => {
     dispatch(getWeather(coords));
-  }, [coords, dispatch]);
+  }, [ coords, dispatch ]);
 
   return (
     <div className="weather">
@@ -25,4 +26,6 @@ export default function Weather() {
       </div>
     </div>
   )
-}
+};
+
+export default Weather;
