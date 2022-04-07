@@ -1,6 +1,7 @@
 export interface IState {
   coords: ICoords;
   levels: ILevels[];
+  isSearch: boolean;
   weather: IWeather;
 }
 

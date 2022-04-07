@@ -61,9 +61,9 @@ code {
   margin: 0;
   &__item{
     font-size: 15px;
-    color: #01318b;
+    color: #fff;
     font-weight: 400;
-    margin: 0 0 .5rem 0;
+    margin: 0 0 1rem 0;
     text-decoration: underline;
   }
 }
@@ -94,15 +94,6 @@ code {
     outline: none;
     cursor: pointer;
   }
-}
-.search-weather{
-  grid-area: navbar;
-  backdrop-filter: blur(15px);
-  &__list{
-    margin: 1rem 0 0 0;
-  }
-  cursor: pointer;
-  padding: 2rem 1rem 0 2rem;
 }
 .arrow-wrap{
   height: 40px;
@@ -143,11 +134,5 @@ code {
     grid-template-rows: min-content;
     grid-template-areas: 'weather'
                           'navbar';
-  }
-  .search-weather{
-    max-width: 320px;
-    width: 100%;
-    backdrop-filter: none;
-    box-sizing: border-box;
   }
 }

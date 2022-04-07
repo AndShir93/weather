@@ -30,7 +30,7 @@ type TDispatch<T> = (action: IAction<T>) => void;
 export const getCityLevels: TGetCityLevels = (city) => {
   const url = `https://api.geotree.ru/address.php?term=${city}`;
 
-  return (dispatch: TDispatch<ILevels[]>) => (
+  return (dispatch: TDispatch<ILevels[] | boolean>) => (
     fetch(url)
       .then((resp) => resp.json())
       .then((data: IData[]) => {
@@ -41,7 +41,8 @@ export const getCityLevels: TGetCityLevels = (city) => {
           value,
           name_source,
         }));
-        dispatch({ type: 'GET_LEVELS', payload: levels })
+        dispatch({ type: 'GET_LEVELS', payload: levels });
+        dispatch({ type: 'GET_IS_SEARCH', payload: false });
       })
       .catch(() => {
         dispatch({ type: 'GET_LEVELS', payload: [] })
