@@ -1,5 +1,5 @@
 import React from 'react'
-import Weather from './components/Weather';
+import Weather from './components/Weather/Weather';
 import { useAppSelector } from './redux/store';
 import { TRenderView } from './types/types';
 import SearchCol from './components/SearchCol/SearchCol';

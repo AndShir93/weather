@@ -4,6 +4,7 @@ import { useAppSelector } from '../../redux/store';
 import { useDispatch } from 'react-redux';
 import { getWeather } from '../../asyncActions/getWeather';
 import style from './style.module.scss';
+import { DEFAULT_WEATHER } from '../../redux/defaultState';
 
 type TSelectCity = (coords: ICoords) => () => void;
 
@@ -11,6 +12,7 @@ const ListCity: TRenderView = () => {
   const levels = useAppSelector((state: IState) => state.levels);
   const dispatch = useDispatch();
   const selectCity: TSelectCity = (coords) => () => {
+    dispatch({ type: 'GET_WEATHER', payload: DEFAULT_WEATHER });
     dispatch(getWeather(coords));
   }
 
