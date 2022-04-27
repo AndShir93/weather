@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import { getCityLevels } from '../../asyncActions/getWeather';
 import { useDispatch } from 'react-redux';
 import { TRenderView } from '../../types/types';
+import style from './style.module.scss';
 
 const SearchCity: TRenderView = () => {
   const [ value, setValue ] = useState<string>('');
@@ -13,15 +14,15 @@ const SearchCity: TRenderView = () => {
   };
 
   return (
-    <form id='search' className='search-city' onSubmit={onSubmit}>
+    <form id='search' className={style.searchCity} onSubmit={onSubmit}>
       <input
         type='text'
-        className='search-city__input'
+        className={style.searchCityInput}
         onChange={(e) => {
           setValue(e.target.value)
         }}
       />
-      <button className='search-city__button'></button>
+      <button className={style.searchCityButton}></button>
     </form>
   )
 }

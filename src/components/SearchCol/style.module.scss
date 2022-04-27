@@ -31,6 +31,35 @@
   height: 250px;
 }
 
+.searchCity{
+  display: flex;
+  justify-content: space-between;
+  &Input{
+    max-width: calc(100% - 50px);
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255, .5);
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 100;
+    &:focus{
+      outline: none;
+    }
+  }
+  &Button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255, .5);
+    background: url('/img/loupe.svg') no-repeat center;
+    background-size: 60%;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 692px){
   .searchWeather{
     max-width: 320px;

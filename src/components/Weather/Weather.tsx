@@ -46,13 +46,13 @@ const Weather: TRenderView = () => {
   };
 
   const renderContent: TRenderContent = (city) => {
-    if (!city) return <img src={rain} className="weather__ico" alt="rain" />
+    if (!city) return <img src={rain} className={style.weatherIco} alt="rain" />
 
     return (
-    <div className="weather__data">
-        <p className="weather__city">{city}</p>
-      <p className="weather__temp">Температура: {temp}°</p>
-      <p className="weather__wind">Ветер: {wind.speed} м/с</p>
+    <div className={style.weatherData}>
+        <p className={style.weatherCity}>{city}</p>
+      <p className={style.weatherTemp}>Температура: {temp}°</p>
+      <p className={style.weatherWind}>Ветер: {wind.speed} м/с</p>
       <div className={style.description}>
         <p className={style.descriptionTitle}>{ucFirst(description)}</p>
         <img src={iconsMap[description]} alt={description} />
@@ -66,8 +66,8 @@ const Weather: TRenderView = () => {
   }, [ coords, dispatch ]);
 
   return (
-    <div className="weather">
-      <h1 className="weather__title">Погода</h1>
+    <div className={style.weather}>
+      <h1 className={style.weatherTitle}>Погода</h1>
       {renderContent(city)}
     </div>
   )

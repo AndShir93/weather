@@ -8,3 +8,52 @@
   color: #01318b;
   font-weight: 300;
 }
+
+.weather{
+  grid-area: weather;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 2rem;
+  &Title{
+    color: rgb(1, 49, 139);
+    font-size: 3rem;
+    font-weight: 100;
+  }
+  &Data {
+    display: flex;
+    flex-direction: column;
+  }
+  &Temp, &Wind {
+    font-size: 2rem;
+    color: rgb(1, 49, 139);
+    font-weight: 100;
+  }
+  &City{
+    font-size: 3rem;
+    color: rgb(1, 49, 139);
+    font-weight: 100;
+  }
+  &Description{
+    font-size: 1rem;
+    color: rgb(1, 49, 139);
+    font-weight: 100;
+  }
+  &Ico{
+    max-width: 300px;
+  }
+}
+@media (max-width: 1024px) {
+  .weather {
+    &Temp, &Wind {
+      font-size: 1.5rem;
+    }
+
+    &City {
+      font-size: 2.5rem;
+    }
+
+    &Description {
+      font-size: .8rem;
+    }
+  }
+}
