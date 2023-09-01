@@ -25,7 +25,8 @@
         "max-len": ["error", { "code": 120 }],
         "array-bracket-spacing": ["warn", "always"],
         "object-curly-spacing": ["warn", "always"],
-        "quotes": ["warn", "single"]
+        "quotes": ["warn", "single"],
+        "@typescript-eslint/no-non-null-assertion": "off"
     },
     "settings": {
         "react": {

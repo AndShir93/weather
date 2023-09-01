@@ -23,7 +23,7 @@ interface IAction<T> {
 
 type TGetCityLevels = (city: string) => void;
 
-type TGetWeather = (coords: ICoords) => void;
+type TGetWeather = (coords: ICoords) => (dispatch: any) => Promise<void>;
 
 type TDispatch<T> = (action: IAction<T>) => void;
 

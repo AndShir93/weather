@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import { getWeather } from '../../asyncActions/getWeather'
+import React from 'react';
 import { useAppSelector } from '../../redux/store';
-import { useDispatch } from 'react-redux';
 import { TRenderView } from '../../types/types';
 import style from './style.module.scss';
 import rain from '../../img/rainy-5.svg';
@@ -11,6 +9,8 @@ import cloudyDay3 from '../../img/cloudy-day-3.svg';
 import rainy1 from '../../img/rainy-1.svg';
 import cloudy from '../../img/cloudy.svg';
 import day from '../../img/day.svg';
+import {useDispatch} from "react-redux";
+import {getWeather} from "../../asyncActions/getWeather";
 
 enum TTypeWeather {
   cloudyDay1 = 'облачно с прояснениями',
@@ -61,7 +61,7 @@ const Weather: TRenderView = () => {
     );
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     dispatch(getWeather(coords));
   }, [ coords, dispatch ]);
 
